@@ -78,14 +78,33 @@
     position: sticky; top: 0; z-index: 40; background: rgba(23,19,31,0.92); backdrop-filter: blur(8px);
     color: var(--cream-text); border-bottom: 1px solid rgba(246,241,230,0.08);
   }
-  .nav{ display: flex; align-items: center; justify-content: space-between; padding: 16px clamp(20px, 4vw, 48px); max-width: 1160px; margin: 0 auto; }
+  .nav{ position: relative; display: flex; align-items: center; justify-content: space-between; padding: 16px clamp(20px, 4vw, 48px); max-width: 1160px; margin: 0 auto; }
   .logo{ font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5em; text-decoration: none; color: var(--cream-text); }
   .logo span{ color: var(--marigold); }
   .logo-icon{ width: 26px; height: auto; display: block; }
   .nav-links{ display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; font-family: var(--font-mono); font-size: 0.82rem; }
   .nav-links a{ text-decoration: none; opacity: 0.8; }
   .nav-links a:hover{ opacity: 1; }
-  @media (max-width: 760px){ .nav-links{ display: none; } }
+  .nav-toggle{ display:none; background:none; border:1px solid rgba(246,241,230,0.35); color: var(--cream-text); border-radius:8px; padding:8px 11px; font-family: var(--font-mono); font-size:1rem; line-height:1; cursor:pointer; }
+  @media (max-width: 760px){
+    .nav-toggle{ display:block; }
+    .nav-links{
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: var(--ink);
+      border-bottom: 1px solid rgba(246,241,230,0.12);
+      padding: 8px 0;
+      z-index: 30;
+    }
+    .nav-links.open{ display: flex; }
+    .nav-links li{ width: 100%; }
+    .nav-links a{ display: block; padding: 14px clamp(20px, 4vw, 48px); }
+  }
 
   .page-hero{
     background: radial-gradient(ellipse 120% 80% at 15% -10%, var(--ink-2), var(--ink) 60%);
@@ -150,6 +169,7 @@
       <li><a href="/planos/">Planos</a></li>
       <li><a href="/#exemplo">Exemplo</a></li>
     </ul>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
     <a class="btn btn--primary" href="https://wa.me/33759732909?text=Quero%20testar%20o%20Artesanato%20IA" style="padding:0.7em 1.2em;">Começar</a>
   </nav>
 </header>
@@ -240,5 +260,30 @@
   <div class="wrap">© 2026 Artesanato IA — Maria Lucia Menezes Leite · <a href="/privacidade/">Privacidade</a></div>
 </footer>
 
+
+<script>
+  (function(){
+    document.querySelectorAll('.nav-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var nav = btn.closest('.nav');
+        var links = nav.querySelector('.nav-links');
+        var open = links.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? '\u2715' : '\u2630';
+      });
+      nav_links_close(btn);
+    });
+    function nav_links_close(btn){
+      var nav = btn.closest('.nav');
+      nav.querySelectorAll('.nav-links a').forEach(function(a){
+        a.addEventListener('click', function(){
+          nav.querySelector('.nav-links').classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.textContent = '\u2630';
+        });
+      });
+    }
+  })();
+</script>
 </body>
 </html>

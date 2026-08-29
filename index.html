@@ -143,6 +143,7 @@
     border-bottom: 1px solid rgba(246,241,230,0.08);
   }
   .nav{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -172,7 +173,27 @@
   }
   .nav-links a{ text-decoration: none; opacity: 0.8; transition: opacity 0.15s; }
   .nav-links a:hover{ opacity: 1; }
-  @media (max-width: 760px){ .nav-links{ display: none; } }
+  .nav-toggle{ display:none; background:none; border:1px solid rgba(246,241,230,0.35); color: var(--cream-text); border-radius:8px; padding:8px 11px; font-family: var(--font-mono); font-size:1rem; line-height:1; cursor:pointer; }
+  @media (max-width: 760px){
+    .nav-toggle{ display:block; }
+    .nav-links{
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: var(--ink);
+      border-bottom: 1px solid rgba(246,241,230,0.12);
+      padding: 8px 0;
+      z-index: 30;
+    }
+    .nav-links.open{ display: flex; }
+    .nav-links li{ width: 100%; }
+    .nav-links a{ display: block; padding: 14px clamp(20px, 4vw, 48px); }
+    .lang-switch{ display: none !important; }
+  }
 
   .nav-right{ display: flex; align-items: center; gap: 1.3rem; }
   .lang-switch{
@@ -521,6 +542,7 @@
       <li><a href="#exemplo">Exemplo</a></li>
       <li><a href="/planos/">Planos</a></li>
     </ul>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
     <div class="nav-right">
       <div class="lang-switch" aria-label="Idioma">
         <a href="/" aria-current="page">PT</a><a href="/en/">EN</a><a href="/fr/">FR</a>
@@ -727,5 +749,30 @@
   })();
 </script>
 
+
+<script>
+  (function(){
+    document.querySelectorAll('.nav-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var nav = btn.closest('.nav');
+        var links = nav.querySelector('.nav-links');
+        var open = links.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? '\u2715' : '\u2630';
+      });
+      nav_links_close(btn);
+    });
+    function nav_links_close(btn){
+      var nav = btn.closest('.nav');
+      nav.querySelectorAll('.nav-links a').forEach(function(a){
+        a.addEventListener('click', function(){
+          nav.querySelector('.nav-links').classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.textContent = '\u2630';
+        });
+      });
+    }
+  })();
+</script>
 </body>
 </html>
