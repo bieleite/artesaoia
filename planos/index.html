@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Planos do Artesanato IA: comece grátis com 5 publicações por mês, ou entre como fundador por R$14,90/mês." />
+<link rel="alternate" hreflang="pt-BR" href="https://artesaoia.com.br/planos/" />
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://artesaoia.com.br/planos/" />
+<meta property="og:title" content="Planos — Artesanato IA" />
+<meta property="og:description" content="Comece grátis com 5 publicações por mês, ou entre como fundador por R$14,90/mês." />
+<meta property="og:image" content="https://artesaoia.com.br/assets/og-banner.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<title>Planos — Artesanato IA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Literata:opsz,wght@7..72,400..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #17131F;
+    --ink-2: #201C30;
+    --indigo: #35439E;
+    --marigold: #E7A33B;
+    --marigold-dim: #C98A2C;
+    --urucum: #BE4A2E;
+    --paper: #F1EAD9;
+    --paper-2: #E8DFCB;
+    --thread: #6E6656;
+    --thread-dim: #B8AF9B;
+    --cream-text: #F6F1E6;
+
+    --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Literata", Georgia, "Times New Roman", serif;
+    --font-mono: "Space Mono", "SFMono-Regular", Menlo, monospace;
+  }
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior: auto; } }
+  body{
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a{ color: inherit; }
+  h1,h2,h3{ font-family: var(--font-display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+  .eyebrow{
+    font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 0.5em;
+  }
+  .eyebrow::before{ content: ""; width: 0.5em; height: 0.5em; border-radius: 50%; background: currentColor; display: inline-block; }
+  .wrap{ max-width: 1160px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
+  .btn{
+    font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.03em; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.6em; padding: 0.95em 1.6em; border-radius: 999px;
+    border: 1px solid transparent; transition: transform 0.18s ease, box-shadow 0.18s ease; cursor: pointer;
+  }
+  .btn:focus-visible{ outline: 3px solid var(--marigold); outline-offset: 3px; }
+  .btn:hover{ transform: translateY(-2px); }
+  .btn--primary{ background: var(--marigold); color: var(--ink); box-shadow: 0 6px 0 0 var(--marigold-dim); }
+  .btn--primary:hover{ box-shadow: 0 8px 0 0 var(--marigold-dim); }
+  .btn--primary:active{ transform: translateY(1px); box-shadow: 0 3px 0 0 var(--marigold-dim); }
+  .btn--ghost{ background: transparent; border-color: currentColor; color: inherit; opacity: 0.85; width: 100%; justify-content: center; }
+  .btn--ghost:hover{ opacity: 1; }
+
+  header{
+    position: sticky; top: 0; z-index: 40; background: rgba(23,19,31,0.92); backdrop-filter: blur(8px);
+    color: var(--cream-text); border-bottom: 1px solid rgba(246,241,230,0.08);
+  }
+  .nav{ display: flex; align-items: center; justify-content: space-between; padding: 16px clamp(20px, 4vw, 48px); max-width: 1160px; margin: 0 auto; }
+  .logo{ font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5em; text-decoration: none; color: var(--cream-text); }
+  .logo span{ color: var(--marigold); }
+  .logo-icon{ width: 26px; height: auto; display: block; }
+  .nav-links{ display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; font-family: var(--font-mono); font-size: 0.82rem; }
+  .nav-links a{ text-decoration: none; opacity: 0.8; }
+  .nav-links a:hover{ opacity: 1; }
+  @media (max-width: 760px){ .nav-links{ display: none; } }
+
+  .page-hero{
+    background: radial-gradient(ellipse 120% 80% at 15% -10%, var(--ink-2), var(--ink) 60%);
+    color: var(--cream-text); padding: clamp(56px, 8vw, 88px) 0 clamp(48px, 6vw, 64px); text-align: center;
+  }
+  .page-hero .eyebrow{ color: var(--marigold); justify-content: center; margin-bottom: 1.2em; }
+  .page-hero h1{ font-size: clamp(2rem, 4.2vw, 3rem); font-weight: 700; margin: 0 auto 0.5em; max-width: 18ch; }
+  .page-hero p{ color: var(--thread-dim); max-width: 52ch; margin: 0 auto; font-size: 1.08rem; }
+
+  section{ padding: clamp(48px, 7vw, 80px) 0; }
+
+  .plans{
+    display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 32px); align-items: stretch;
+  }
+  @media (max-width: 760px){ .plans{ grid-template-columns: 1fr; } }
+  .plan{
+    background: #fff; border-radius: 4px; padding: clamp(28px, 4vw, 40px); display: flex; flex-direction: column; gap: 1.1em;
+    border: 1px solid var(--paper-2);
+  }
+  .plan--founder{ background: var(--indigo); color: var(--cream-text); border-color: var(--indigo); position: relative; overflow: hidden; }
+  .plan-badge{
+    font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+    background: var(--marigold); color: var(--ink); display: inline-block; padding: 0.35em 0.8em; border-radius: 999px; align-self: flex-start;
+  }
+  .plan h2{ font-size: 1.5rem; }
+  .plan .price{ font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; line-height: 1; }
+  .plan .price small{ font-family: var(--font-mono); font-size: 0.95rem; font-weight: 400; opacity: 0.7; }
+  .plan .strike{ font-family: var(--font-mono); font-size: 0.9rem; opacity: 0.6; text-decoration: line-through; }
+  .plan ul{ list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.65em; font-size: 0.95rem; }
+  .plan ul li{ display: flex; gap: 0.6em; align-items: baseline; }
+  .plan ul li::before{ content: "✓"; font-family: var(--font-mono); color: var(--indigo); flex-shrink: 0; }
+  .plan--founder ul li::before{ color: var(--marigold); }
+  .plan-note{ font-family: var(--font-mono); font-size: 0.78rem; opacity: 0.7; margin-top: auto; }
+
+  .flow-note{
+    background: var(--paper-2); border-left: 3px solid var(--urucum); padding: 1.1em 1.4em; margin-top: clamp(32px, 5vw, 48px);
+    font-size: 0.95rem; color: var(--thread); max-width: 70ch;
+  }
+  .flow-note strong{ color: var(--ink); }
+
+  .faq{ max-width: 70ch; }
+  .faq-item{ border-top: 1px dashed var(--thread-dim); padding: 1.4em 0; }
+  .faq-item:last-child{ border-bottom: 1px dashed var(--thread-dim); }
+  .faq-item h3{ font-size: 1.05rem; margin-bottom: 0.4em; }
+  .faq-item p{ margin: 0; color: var(--thread); font-size: 0.95rem; }
+
+  .section--dark{ background: var(--ink); color: var(--cream-text); }
+  .section--dark .thread-text{ color: var(--thread-dim); }
+  .closing{ text-align: center; display: flex; flex-direction: column; gap: 1.2em; align-items: center; }
+  .closing h2{ font-size: clamp(1.7rem, 3.6vw, 2.4rem); max-width: 20ch; }
+
+  footer{ background: var(--ink); color: var(--thread-dim); padding: 32px 0; font-size: 0.85rem; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="/"><img src="/assets/logo-icon.png" alt="" class="logo-icon">Artesanato<span>IA</span></a>
+    <ul class="nav-links">
+      <li><a href="/#como-funciona">Como funciona</a></li>
+      <li><a href="/planos/">Planos</a></li>
+      <li><a href="/#exemplo">Exemplo</a></li>
+    </ul>
+    <a class="btn btn--primary" href="https://wa.me/33759732909?text=Quero%20testar%20o%20Artesanato%20IA" style="padding:0.7em 1.2em;">Começar</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Planos</p>
+      <h1>Comece de graça. Vire fundador se gostar.</h1>
+      <p>Sem cartão de crédito pra testar. Sem contrato de fidelidade pra continuar.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="plans">
+        <div class="plan">
+          <h2>Grátis</h2>
+          <div class="price">R$0<small>/mês</small></div>
+          <ul>
+            <li>5 publicações por mês</li>
+            <li>Foto tratada pela IA</li>
+            <li>Legenda + hashtags geradas</li>
+            <li>Link pronto pra copiar e postar no Instagram</li>
+          </ul>
+          <p class="plan-note">Ideal pra testar antes de decidir se vale a pena assinar.</p>
+          <a class="btn btn--ghost" href="https://wa.me/33759732909?text=Quero%20testar%20o%20Artesanato%20IA%20gr%C3%A1tis">Testar grátis no WhatsApp</a>
+        </div>
+
+        <div class="plan plan--founder">
+          <span class="plan-badge">Preço fundador</span>
+          <h2>Early Adopter</h2>
+          <div class="price">R$14,90<small>/mês</small></div>
+          <span class="strike">de R$19,90</span>
+          <ul>
+            <li>50 publicações por mês</li>
+            <li>Tudo do plano Grátis</li>
+            <li>Sem marca d'água</li>
+            <li>Preço congelado enquanto você continuar assinante</li>
+            <li>Vaga limitada aos primeiros 100 fundadores</li>
+          </ul>
+          <p class="plan-note">Reservado pra quem entra agora, antes do produto virar self-service.</p>
+          <a class="btn btn--primary" href="https://wa.me/33759732909?text=Quero%20ser%20fundador%20do%20Artesanato%20IA" style="width:100%; justify-content:center;">Quero ser fundador</a>
+        </div>
+      </div>
+
+      <div class="flow-note">
+        <strong>Como funciona hoje:</strong> como ainda estamos na fase de validação, a assinatura Early Adopter é ativada manualmente — você fala com a gente pelo WhatsApp, combina o pagamento (Pix) e seu número é liberado com o limite de 50 publicações/mês. Nada de checkout automático ainda: é sinal de que você está entrando bem no começo.
+      </div>
+    </div>
+  </section>
+
+  <section class="section--dark">
+    <div class="wrap">
+      <div class="eyebrow" style="color:var(--marigold); margin-bottom:1.4em;">Perguntas frequentes</div>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>O que conta como "uma publicação"?</h3>
+          <p class="thread-text">Cada foto que você envia e recebe de volta tratada, com legenda e hashtags, conta como uma publicação — não importa quantas vezes você reenvie a mesma foto por engano.</p>
+        </div>
+        <div class="faq-item">
+          <h3>O preço de fundador aumenta depois?</h3>
+          <p class="thread-text">Não. Enquanto sua assinatura estiver ativa, o valor continua R$14,90/mês, mesmo quando o plano padrão custar mais caro pra quem entrar depois.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Posso cancelar quando quiser?</h3>
+          <p class="thread-text">Sim, sem multa nem fidelidade. É só avisar pelo WhatsApp.</p>
+        </div>
+        <div class="faq-item">
+          <h3>E se eu passar de 50 publicações no mês?</h3>
+          <p class="thread-text">Por enquanto, entre em contato que a gente resolve na mão. Pacotes de créditos extras e planos maiores (Profissional, Negócio) estão a caminho.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap closing">
+      <h2>Só dá pra saber se funciona pra você testando.</h2>
+      <a class="btn btn--primary" href="https://wa.me/33759732909?text=Quero%20testar%20o%20Artesanato%20IA">Testar grátis no WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Artesanato IA — Maria Lucia Menezes Leite · <a href="/privacidade/">Privacidade</a></div>
+</footer>
+
+</body>
+</html>
